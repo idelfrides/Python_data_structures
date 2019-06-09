@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EstruturasDados.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EstruturasDados.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EstruturasDados.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="-209">
+              <caret line="122" selection-start-line="122" selection-end-line="122" />
               <folding>
                 <element signature="e#546#986#0" />
                 <element signature="e#1017#1397#0" />
@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_app.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="run_app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run_app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+            <state relative-caret-position="900">
+              <caret line="214" column="18" selection-start-line="214" selection-start-column="18" selection-end-line="214" selection-end-column="18" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
                 <element signature="e#125#791#0" />
@@ -74,6 +74,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -84,11 +87,12 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="1710" />
     <option name="height" value="975" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -161,11 +165,11 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19365498" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19365498" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" x="744" y="142" width="773" height="594" id="Python Console" order="7" type="FLOATING" weight="0.2783505" />
       <window_info anchor="bottom" x="448" y="149" width="1075" height="586" id="Run" order="2" type="FLOATING" weight="0.3298969" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -179,6 +183,25 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19365498" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" x="448" y="149" width="1075" height="586" id="Run" order="2" type="FLOATING" weight="0.3298969" />
+      <window_info anchor="bottom" x="744" y="142" width="773" height="594" id="Python Console" order="8" type="FLOATING" weight="0.2783505" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48159057" />
+      <window_info anchor="bottom" x="1096" y="126" width="428" height="607" id="Terminal" order="9" type="FLOATING" weight="0.3298969" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -271,26 +294,10 @@
     <entry file="file://$PROJECT_DIR$/arquivo.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-            <element signature="e#125#791#0" />
-            <element signature="e#888#2163#0" />
-            <element signature="e#2641#4428#0" />
-            <element signature="e#3603#4877#0" />
-            <element signature="e#4865#6139#0" />
-            <element signature="e#3851#3957#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EstruturasDados.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="-209">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
           <folding>
             <element signature="e#546#986#0" />
             <element signature="e#1017#1397#0" />
@@ -317,6 +324,22 @@
             <element signature="e#13941#14382#0" />
             <element signature="e#14520#14981#0" />
             <element signature="e#14971#15404#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="214" column="18" selection-start-line="214" selection-start-column="18" selection-end-line="214" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#125#791#0" />
+            <element signature="e#888#2163#0" />
+            <element signature="e#2641#4428#0" />
+            <element signature="e#3603#4877#0" />
+            <element signature="e#4865#6139#0" />
+            <element signature="e#3851#3957#0" />
           </folding>
         </state>
       </provider>
