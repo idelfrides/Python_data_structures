@@ -32,5 +32,5 @@ def main_app(run):
 # THE METHOD THAT START RUNNING
 # THE APPLICATIONS
 # -----------------------------------
-if __name__ == '__main__':
+if __name__ == "__main__":
     main_app(True)  
