@@ -1,5 +1,4 @@
 
-
 class HelperModule(object):
 
     def __init__(self):
@@ -27,19 +26,27 @@ class HelperModule(object):
 
     def menu(self):
         print(' MENU \n\n 1 - Listas \n 2 - Dicionário \n 3 - Arquivos \n 4 - Conjuntos  \n 0 - Sair\n')
-        aux = 1
-        while aux == 1:
-             opcao = int(input('Escolhe uma opcao:  '))
-             if opcao in range(5):
-                 return opcao
-             else:
-                 print('\n opcao: ', opcao)
-                 print('\n WARNING: OPCAO INVALIDA!!!\n\n')
+        yes_option = False
+        option = None
+        while yes_option is False:
+            option = int(input('Escolhe uma opcao:  '))
+            if option in range(5):
+                yes_option = True
+            else:
+                print('\n opcao: ', option)
+                print('\n WARNING: OPCAO INVALIDA!!!\n\n')
+        return option
 
 
     def menu_atividade(self):
-        print(' MENU DE ATIVIDADES CRUD: \n\n 1 - CREATE \n 2 - READ \n 3 - UPDATE \n 4 - DELETE  \n 0 - Sair de atividade\n\n')
+        print(' MENU DE ATIVIDADES CRUD: \n'
+              '\n 1 - CREATE '
+              '\n 2 - READ '
+              '\n 3 - UPDATE '
+              '\n 4 - DELETE  '
+              '\n 0 - Sair de atividade\n\n')
         aux = True
+        opcao = None
         while aux is True:
             opcao = int(input('Escolhe uma opcao:  '))
             if opcao != 1 and opcao is not 2 and opcao != 3 and opcao is not 4 and opcao is not 0:
@@ -112,13 +119,13 @@ class HelperModule(object):
             print('------------------------------------------\nVOCE ESCOLHEU TRABALHAR COM CONJUNTOS\n')
         else:
             pass
-         
         
 
     def int_values_conj(self):
         conj = self.conj
         preench = True
         ind = conj.__len__()
+        valor = None
         while preench is True:
             ind = ind + 1
             valor = int(input('Informe um inteiro pra set{%d} ou -1 pra "caracteres" ou "0" pra sair:  ' % (ind)))
@@ -135,6 +142,7 @@ class HelperModule(object):
         conju = self.conj
         preench = True
         ind = conju.__len__()
+        dado = None
         while preench is True:
             ind = ind + 1
             dado = input('\n Informe um dado pra set{%d} ou 0 pra sair:  ' % (ind))
@@ -151,6 +159,7 @@ class HelperModule(object):
         lista = self.lista
         preench = True
         ind = lista.__len__()
+        valor = None
         while preench is True:
             valor = int(input('Informe um inteiro pra Lista[%d] ou -1 pra "caracteres" ou "0" pra sair:  ' % (ind + 1)))
             if valor is not 0 and valor > 0:
@@ -167,6 +176,7 @@ class HelperModule(object):
         lista = self.lista
         preench = True
         ind = lista.__len__()
+        dado = None
         while preench is True:
             ind = ind + 1
             dado = input('\n Informe um dado pra set{%d} ou 0 pra sair:  ' % (ind))
@@ -177,11 +187,3 @@ class HelperModule(object):
                 preench = False
                 self.my_set(lista, 1)
         return dado
-
-
-
-
-          
-
-
-

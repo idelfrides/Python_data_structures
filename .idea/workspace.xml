@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca93c348-66d5-4447-b400-46fa5ed31a56" name="Default" comment="" />
+    <list default="true" id="ca93c348-66d5-4447-b400-46fa5ed31a56" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EstruturasDados.py" beforeDir="false" afterPath="$PROJECT_DIR$/EstruturasDados.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelperModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/HelperModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_app.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,62 +15,57 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EstruturasDados.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EstruturasDados.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-209">
-              <caret line="122" selection-start-line="122" selection-end-line="122" />
-              <folding>
-                <element signature="e#546#986#0" />
-                <element signature="e#1017#1397#0" />
-                <element signature="e#1438#1879#0" />
-                <element signature="e#1929#2182#0" />
-                <element signature="e#2219#2748#0" />
-                <element signature="e#2772#3041#0" />
-                <element signature="e#3087#3608#0" />
-                <element signature="e#3562#6155#0" />
-                <element signature="e#4456#5020#0" />
-                <element signature="e#5081#5449#0" />
-                <element signature="e#5790#6288#0" />
-                <element signature="e#6135#7469#0" />
-                <element signature="e#5932#6077#0" />
-                <element signature="e#6143#6630#0" />
-                <element signature="e#6607#7077#0" />
-                <element signature="e#7136#7438#0" />
-                <element signature="e#7524#12628#0" />
-                <element signature="e#8373#9750#0" />
-                <element signature="e#9344#9740#0" />
-                <element signature="e#10234#10797#0" />
-                <element signature="e#11303#12316#0" />
-                <element signature="e#12498#12889#0" />
-                <element signature="e#13941#14382#0" />
-                <element signature="e#14520#14981#0" />
-                <element signature="e#14971#15404#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run_app.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/run_app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="214" column="18" selection-start-line="214" selection-start-column="18" selection-end-line="214" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-                <element signature="e#125#791#0" />
-                <element signature="e#888#2163#0" />
-                <element signature="e#2641#4428#0" />
-                <element signature="e#3603#4877#0" />
-                <element signature="e#4865#6139#0" />
-                <element signature="e#3851#3957#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="EstruturasDados.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/EstruturasDados.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="604">
+                  <caret line="75" column="12" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HelperModule.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/HelperModule.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="218">
+                  <caret line="40" selection-start-line="40" selection-end-line="40" />
+                  <folding>
+                    <element signature="e#572#1033#0" />
+                    <element signature="e#1485#1738#0" />
+                    <element signature="e#1778#2307#0" />
+                    <element signature="e#2357#2678#0" />
+                    <element signature="e#2724#3245#0" />
+                    <element signature="e#3305#3758#0" />
+                    <element signature="e#3802#4214#0" />
+                    <element signature="e#4257#4729#0" />
+                    <element signature="e#4774#5190#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="run_app.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/run_app.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="11" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="11" />
+                  <folding>
+                    <element signature="e#0#28#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,8 +82,9 @@
       <list>
         <option value="$PROJECT_DIR$/arquivo.txt" />
         <option value="$PROJECT_DIR$/arquivo.text" />
-        <option value="$PROJECT_DIR$/EstruturasDados.py" />
+        <option value="$PROJECT_DIR$/HelperModule.py" />
         <option value="$PROJECT_DIR$/run_app.py" />
+        <option value="$PROJECT_DIR$/EstruturasDados.py" />
       </list>
     </option>
   </component>
@@ -165,39 +166,39 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.19365498" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13483146" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
+      <window_info anchor="bottom" x="448" y="149" width="1075" height="586" id="Run" order="2" type="FLOATING" weight="0.3298969" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" x="744" y="142" width="773" height="594" id="Python Console" order="7" type="FLOATING" weight="0.2783505" />
-      <window_info anchor="bottom" x="448" y="149" width="1075" height="586" id="Run" order="2" type="FLOATING" weight="0.3298969" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" x="1096" y="126" width="428" height="607" id="Terminal" order="7" type="FLOATING" weight="0.3298969" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.48159057" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19365498" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" x="448" y="149" width="1075" height="586" id="Run" order="2" type="FLOATING" weight="0.3298969" />
-      <window_info anchor="bottom" x="744" y="142" width="773" height="594" id="Python Console" order="8" type="FLOATING" weight="0.2783505" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
+      <window_info anchor="bottom" x="744" y="142" width="773" height="594" id="Python Console" order="8" type="FLOATING" weight="0.2783505" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.48159057" />
       <window_info anchor="bottom" x="1096" y="126" width="428" height="607" id="Terminal" order="9" type="FLOATING" weight="0.3298969" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -208,53 +209,82 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/EstruturasDados.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/run_app.py</url>
-          <line>146</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="20" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/EstruturasDados.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2600">
+          <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EstruturasDados.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2600">
+          <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EstruturasDados.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3050">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EstruturasDados.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3050">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="54" lean-forward="true" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EstruturasDados.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="e#546#986#0" />
-            <element signature="e#1017#1397#0" />
-            <element signature="e#1438#1879#0" />
-            <element signature="e#1929#2182#0" />
-            <element signature="e#2219#2748#0" />
-            <element signature="e#2772#3041#0" />
-            <element signature="e#3087#3608#0" />
-            <element signature="e#3562#6155#0" />
-            <element signature="e#4456#5020#0" />
-            <element signature="e#5081#5449#0" />
-            <element signature="e#5790#6288#0" />
-            <element signature="e#6135#7469#0" />
-            <element signature="e#5932#6077#0" />
-            <element signature="e#6143#6630#0" />
-            <element signature="e#6607#7077#0" />
-            <element signature="e#7136#7438#0" />
-            <element signature="e#7524#12628#0" />
-            <element signature="e#8373#9750#0" />
-            <element signature="e#9344#9740#0" />
-            <element signature="e#10234#10797#0" />
-            <element signature="e#11303#12316#0" />
-            <element signature="e#12498#12889#0" />
-            <element signature="e#13941#14382#0" />
-            <element signature="e#14520#14981#0" />
-            <element signature="e#14971#15404#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -263,13 +293,7 @@
         <state relative-caret-position="1650">
           <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
-            <element signature="e#125#791#0" />
-            <element signature="e#888#2163#0" />
-            <element signature="e#2641#4428#0" />
-            <element signature="e#3603#4877#0" />
-            <element signature="e#4865#6139#0" />
-            <element signature="e#3851#3957#0" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -281,66 +305,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/arquivo.text">
+    <entry file="file://$PROJECT_DIR$/arquivo.text" />
+    <entry file="file://$PROJECT_DIR$/run_app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+        <state relative-caret-position="75">
+          <caret line="11" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/arquivo">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/arquivo.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/HelperModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#572#1033#0" />
+            <element signature="e#1485#1738#0" />
+            <element signature="e#1778#2307#0" />
+            <element signature="e#2357#2678#0" />
+            <element signature="e#2724#3245#0" />
+            <element signature="e#3305#3758#0" />
+            <element signature="e#3802#4214#0" />
+            <element signature="e#4257#4729#0" />
+            <element signature="e#4774#5190#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EstruturasDados.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-209">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
-          <folding>
-            <element signature="e#546#986#0" />
-            <element signature="e#1017#1397#0" />
-            <element signature="e#1438#1879#0" />
-            <element signature="e#1929#2182#0" />
-            <element signature="e#2219#2748#0" />
-            <element signature="e#2772#3041#0" />
-            <element signature="e#3087#3608#0" />
-            <element signature="e#3562#6155#0" />
-            <element signature="e#4456#5020#0" />
-            <element signature="e#5081#5449#0" />
-            <element signature="e#5790#6288#0" />
-            <element signature="e#6135#7469#0" />
-            <element signature="e#5932#6077#0" />
-            <element signature="e#6143#6630#0" />
-            <element signature="e#6607#7077#0" />
-            <element signature="e#7136#7438#0" />
-            <element signature="e#7524#12628#0" />
-            <element signature="e#8373#9750#0" />
-            <element signature="e#9344#9740#0" />
-            <element signature="e#10234#10797#0" />
-            <element signature="e#11303#12316#0" />
-            <element signature="e#12498#12889#0" />
-            <element signature="e#13941#14382#0" />
-            <element signature="e#14520#14981#0" />
-            <element signature="e#14971#15404#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="214" column="18" selection-start-line="214" selection-start-column="18" selection-end-line="214" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-            <element signature="e#125#791#0" />
-            <element signature="e#888#2163#0" />
-            <element signature="e#2641#4428#0" />
-            <element signature="e#3603#4877#0" />
-            <element signature="e#4865#6139#0" />
-            <element signature="e#3851#3957#0" />
-          </folding>
+        <state relative-caret-position="604">
+          <caret line="75" column="12" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
         </state>
       </provider>
     </entry>
