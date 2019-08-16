@@ -1,3 +1,13 @@
+# ----------------------------------------
+#           importing modules
+# ----------------------------------------
+import EstruturasDados as ds
+
+# ----------------------------------
+# THIS METHOD CONTAIN METHODS USED
+# LIKE COMPLEMEN
+# ----------------------------------
+
 
 class HelperModule(object):
 
@@ -7,7 +17,8 @@ class HelperModule(object):
 
     def app_info(self):
         print('''
-            THIS APPLICATION IMPLEMENTS AA CRUD 
+        *********************************************
+            THIS APPLICATION IMPLEMENTS A CRUD 
             OPERATIONS ON DATA STRUCTURES,
             LIKE: 
             ---- IMUTABLE ----------
@@ -19,75 +30,86 @@ class HelperModule(object):
                 - FILE
                 - SET     
                 
-        ********************************************   
+        *********************************************  
         
         ''')
-
 
     def menu(self):
         print(' MENU \n\n 1 - Listas \n 2 - Dicionário \n 3 - Arquivos \n 4 - Conjuntos  \n 0 - Sair\n')
         yes_option = False
         option = None
         while yes_option is False:
-            option = int(input('Escolhe uma opcao:  '))
-            if option in range(5):
-                yes_option = True
-            else:
-                print('\n opcao: ', option)
-                print('\n WARNING: OPCAO INVALIDA!!!\n\n')
+            try:
+                option = int(input('\n\n Enter an option:  '))
+                if option in range(5):
+                    yes_option = True
+                else:
+                    print('\n opcao: ', option)
+                    print('\n WARNING: OPCAO INVALIDA!!!\n\n')
+            except Exception as error:
+                print('\n You entered a CARACTER or a STRING')
+                print('\n WARNING: INVALID OPTION!!!')
+                print('\n PYTHON SAID: {}'.format(error))
         return option
 
-
     def menu_atividade(self):
-        print(' MENU DE ATIVIDADES CRUD: \n'
+        print('\n MENU DE ATIVIDADES CRUD: \n'
               '\n 1 - CREATE '
               '\n 2 - READ '
               '\n 3 - UPDATE '
               '\n 4 - DELETE  '
-              '\n 0 - Sair de atividade\n\n')
-        aux = True
-        opcao = None
-        while aux is True:
-            opcao = int(input('Escolhe uma opcao:  '))
-            if opcao != 1 and opcao is not 2 and opcao != 3 and opcao is not 4 and opcao is not 0:
-                print('AVISO: OPCAO INVALIDA!!!\n\n')
-            else:
-                aux = False
-        return opcao
+              '\n 0 - Voltar pra MENU DE ESTRUTURA\n\n')
+        yes_act = False
+        option = None
+        while yes_act is False:
+            try:
+                option = int(input('\n\n Enter an action to perform:  '))
+                if option in range(5):
+                    yes_act = True
+                else:
+                    print('\n You entered --> {} '.format(option))
+                    print('AVISO: OPCAO INVALIDA!!!\n\n')
+            except Exception as error:
+                print('\n You entered a CARACTER or a STRING')
+                print('\n WARNING: INVALID OPTION!!!')
+                print('\n PYTHON SAID: {}'.format(error))
+        return option
 
 
     def my_set(self, instance, value):
+        dso = ds.EstruturasDados()
         if value == 1:
-            self.lista = instance
+            dso.lista = instance
         elif value == 2:
-            self.dicio = instance
+            dso.dicio = instance
         elif value == 3:
-            self.arq = instance
+            dso.arq = instance
         elif value == 4:
-            self.conj = instance
+            dso.conj = instance
         else:
             pass
 
 
     def my_get(self, owner):
+        dso = ds.EstruturasDados()
         if owner == 1:
-            if self.lista:
+            if dso.lista:
                 return 1
             else:
                 return 0
         elif owner == 2:
-            if self.dicio:
+            if dso.dicio:
                 return 1
             else:
                 return 0
         elif owner == 3:
-            print(self.arq)
-            if self.arq > 0:
+            print(dso.arq)
+            if dso.arq > 0:
                 return 1
             else:
                 return 0
         elif owner == 4:
-            if self.conj:
+            if dso.conj:
                 return 1
             else:
                 return 0
@@ -109,81 +131,108 @@ class HelperModule(object):
 
 
     def info_structure(self, est):
-        if est == 1:
-            print('--------------------------------------\nVOCE ESCOLHEU TRABALHAR COM LISTAS\n')
-        elif est == 2:
-            print('--------------------------------------\nVOCE ESCOLHEU TRABALHAR COM DICIONARIO\n')
-        elif est == 3:
-            print('------------------------------------------\nVOCE ESCOLHEU TRABALHAR COM ARQUIVOS\n')
-        elif est == 4:
-            print('------------------------------------------\nVOCE ESCOLHEU TRABALHAR COM CONJUNTOS\n')
+        info = """
+        --------------------------------------
+            VOCE ESCOLHEU TRABALHAR COM ...
+        --------------------------------------        
+        """
+        struc_upper = est.upper()
+        if est == 'lista':
+            print('{} {}'.format(info, struc_upper))
+        elif est == 'dicionario':
+            print('{} {}'.format(info, struc_upper))
+        elif est == 'arquivo':
+            print('{}{}'.format(info, struc_upper))
+        elif est == 'conjunto':
+            print('{}{}'.format(info, struc_upper))
         else:
             pass
         
 
-    def int_values_conj(self):
-        conj = self.conj
+    def all_values_lista(self):
+        dso = ds.EstruturasDados()
+        lista = dso.lista
+        preench = True
+        ind = lista.__len__()
+        valor = None
+        while preench is True:
+            print('\n Informe um numero, caractere ou palavra pra Lista[%d]' %(ind + 1))
+            print('\n quit -> pra sair')
+            help_value = input('\n Enter some: ')
+            if help_value.isnumeric():
+                valor = int(help_value)
+                lista.append(valor)
+                print(lista)
+                ind = ind + 1
+            elif help_value.isalpha() and (help_value != 'QUIT' and help_value != 'quit'):
+                lista.append(help_value)
+                print(lista)
+                ind = ind + 1
+            elif help_value == 'QUIT' or help_value == 'quit':
+                preench = False
+                self.my_set(lista, 1)
+            elif help_value.isalnum():
+                preench = True
+            else:
+                pass
+        return
+
+
+    def all_values_dict(self):
+        dso = ds.EstruturasDados()
+        dicio = dso.dicio
+        preench = True
+        ind = dicio.__len__()
+        valor = None
+        while preench is True:
+            print('\n Informe um numero, caractere ou palavra pra Dicionario[%d]' %(ind + 1))
+            print('\n quit -> pra sair')
+            help_value = input('\n Enter some: ')
+
+            if help_value.isnumeric():
+                ind = + 1
+                valor = int(help_value)
+                dicio[(ind)] = valor
+                print(dicio)
+            elif help_value.isalpha() and (help_value != 'QUIT' and help_value != 'quit'):
+                ind = ind + 1
+                dicio[(ind)] = help_value
+                print(dicio)
+            elif help_value == 'QUIT' or help_value == 'quit':
+                preench = False
+                self.my_set(dicio, 2)
+            elif help_value.isalnum():
+                preench = True
+            else:
+                pass
+        return
+
+
+    def all_values_conj(self):
+        dso = ds.EstruturasDados()
+        conj = dso.conj
         preench = True
         ind = conj.__len__()
         valor = None
         while preench is True:
             ind = ind + 1
-            valor = int(input('Informe um inteiro pra set{%d} ou -1 pra "caracteres" ou "0" pra sair:  ' % (ind)))
-            if valor is not 0 and valor > 0:
+            print('\n Informe um numero, caractere ou palavra pra Conjunto[%d]' % (ind + 1))
+            print('\n quit -> pra sair')
+            help_value = input('\n Enter some: ')
+            if help_value.isnumeric():
+                valor = int(help_value)
                 conj.add(valor)
                 print(conj)
-            else:
-                preench = False
-                self.my_set(conj, 4)
-        return valor
-
-
-    def string_value_conj(self):
-        conju = self.conj
-        preench = True
-        ind = conju.__len__()
-        dado = None
-        while preench is True:
-            ind = ind + 1
-            dado = input('\n Informe um dado pra set{%d} ou 0 pra sair:  ' % (ind))
-            if dado is not '0':
-                conju.add(dado)
-                print(conju)
-            else:
-                preench = False
-                self.my_set(conju, 4)
-        return dado
-
-
-    def int_values_lista(self):
-        lista = self.lista
-        preench = True
-        ind = lista.__len__()
-        valor = None
-        while preench is True:
-            valor = int(input('Informe um inteiro pra Lista[%d] ou -1 pra "caracteres" ou "0" pra sair:  ' % (ind + 1)))
-            if valor is not 0 and valor > 0:
-                lista.append(valor)
-                print(lista)
                 ind = ind + 1
-            else:
+            elif help_value.isalpha() and (help_value != 'QUIT' and help_value != 'quit'):
+                conj.add(help_value)
+                print(conj)
+                ind = ind + 1
+            elif help_value == 'QUIT' or help_value == 'quit':
                 preench = False
-                self.my_set(lista, 1)
-        return valor
-
-
-    def string_value_lista(self):
-        lista = self.lista
-        preench = True
-        ind = lista.__len__()
-        dado = None
-        while preench is True:
-            ind = ind + 1
-            dado = input('\n Informe um dado pra set{%d} ou 0 pra sair:  ' % (ind))
-            if dado is not '0':
-                lista.append(dado)
-                print(lista)
+                self.my_set(conj, 1)
+            elif help_value.isalnum():
+                preench = True
             else:
-                preench = False
-                self.my_set(lista, 1)
-        return dado
+                pass
+        return
