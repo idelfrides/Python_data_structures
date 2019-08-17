@@ -1,9 +1,9 @@
-import HelperModule as hm2
-import EstruturasDados as ds
+import os
+
+from data_structures_lib import EstruturasDados as ds
 import time as t
 
 class Crud_operation(object):
-    # hm2o = hm2.HelperModule()
 
     def __init__(self):
         pass
@@ -24,27 +24,41 @@ class Crud_operation(object):
                 pass
         elif tipo_estru == 2:   # create a dictionary
             dicionario = {}
+            # hmo.feedback()
             print('\n\n Seu DICIONARIO foi criado com sucesso. \n Agora, vamos preenche-lo.\n\n')
             hmo.my_set(dicionario, 2)
             hmo.all_values_dict()
             return
         elif tipo_estru == 3:   # create a file
-            arquivo = open('arquivo.txt', 'w', encoding="utf8")
-            print('\n\n Seu ARQUIVO foi criado com sucesso. \n Agora, vamos preenche-lo.\n\n')
-            preench = True
-            hour = t.asctime()
-            ind = 0
-            while preench is True:
-                ind = ind + 1
-                dado = input('\n Informe um dado pra linha [%d] ou ( N ou n ) pra sair:  '%(ind))
-                if dado is not 'N' and dado is not 'n':
-                   data = dado + '\n'
-                   arquivo.writelines(data)
-                   arquivo.write(hour)
-                else:
-                    preench = False
-                    hmo.my_set(1, 3)
-                    arquivo.close()
+            file_name = hmo.get_file_name()
+            print('CURRENT DIR: {}'.format(os.getcwd()))
+
+            # hmo.change_dir(2)    # go to files_folder directory
+            try:
+                arquivo = open(file_name, 'w', encoding="utf-8")
+
+                print('\n\n Seu ARQUIVO foi criado com sucesso. \n Agora, vamos preenche-lo.\n\n')
+                t.sleep(4)
+                preench = True
+                hour = t.asctime()
+                ind = 0
+                while preench is True:
+                    # ind = ind + 1
+                    print('\n Informe um dado pra linha [%d] ou ( N ou n ) pra sair:  '%(ind))
+                    dado = input('\n Informe um dado:  ')
+                    if dado is not 'N' and dado is not 'n':
+                       data = dado + '\n'
+                       arquivo.writelines(data)
+                       ind = ind + 1
+                    else:
+                        preench = False
+                        arquivo.write(hour)
+                        arquivo.close()
+                        hmo.feedback()
+                        # hmo.change_dir(1) # go to root dir
+            except Exception as error:
+                print('\n ERROR: ocorred when try crete a file --> {}.'.format(file_name))
+                print('\n This is the error: {}'.format(error))
             return
         elif tipo_estru == 4:  # create a set
             conj = set()
@@ -58,7 +72,7 @@ class Crud_operation(object):
             return
 
 
-    def read(self, tipo_estru, hmo):
+    def read(self, tipo_estru, hmo, file_name):
         dso = ds.EstruturasDados()
         if tipo_estru == 1:   # read the list
             my_lista = dso.lista
@@ -73,14 +87,14 @@ class Crud_operation(object):
             print('\n\n')
             return
         elif tipo_estru == 3:  # read  the file
-            print('\n\n LEITURA DE ARQUIVO \n')
-            arquivo = open('arquivo.txt', 'r', encoding="utf-8")
-            dados_arq = arquivo.readlines()
-            for d in dados_arq:
+            print('\n\n LEITURA DE ARQUIVO --> {} \n\n'.format(file_name))
+            arquivo = open(file_name, 'r', encoding="utf-8")
+            # dados_arq = arquivo.readlines()
+            for d in arquivo:
                 # v = d.split()
                 print(d)
-                print('\n')
-            hmo.my_set(1, 3)
+                # print('\n')
+            # hmo.my_set(1, 3)
             arquivo.close()
             print('\n\n')
             return

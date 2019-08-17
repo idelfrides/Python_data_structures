@@ -1,7 +1,11 @@
 # ----------------------------------------
 #           importing modules
 # ----------------------------------------
-import EstruturasDados as ds
+import glob
+import os
+
+from data_structures_lib import EstruturasDados as ds
+
 
 # ----------------------------------
 # THIS METHOD CONTAIN METHODS USED
@@ -40,7 +44,7 @@ class HelperModule(object):
         option = None
         while yes_option is False:
             try:
-                option = int(input('\n\n Enter an option:  '))
+                option = int(input('\n Enter an option:  '))
                 if option in range(5):
                     yes_option = True
                 else:
@@ -58,7 +62,7 @@ class HelperModule(object):
               '\n 2 - READ '
               '\n 3 - UPDATE '
               '\n 4 - DELETE  '
-              '\n 0 - Voltar pra MENU DE ESTRUTURA\n\n')
+              '\n 0 - Voltar\n\n')
         yes_act = False
         option = None
         while yes_act is False:
@@ -103,8 +107,8 @@ class HelperModule(object):
             else:
                 return 0
         elif owner == 3:
-            print(dso.arq)
-            if dso.arq > 0:
+            # print(dso.arq)
+            if dso.arq.__len__() > 0:
                 return 1
             else:
                 return 0
@@ -120,9 +124,9 @@ class HelperModule(object):
     def verif_estrut_exist(self, est):
         if est == 1:
            return  self.my_get(1)  # LIST
-        elif est == 2:      # dictionary exist
+        elif est == 2:             # dictionary exist
             return self.my_get(2)  # DICT
-        elif est == 3:      # list exist
+        elif est == 3:             # list exist
             return self.my_get(3)  # FILE
         elif est == 4:
             return self.my_get(4)  # SET
@@ -236,3 +240,112 @@ class HelperModule(object):
             else:
                 pass
         return
+
+    def get_file_name(self):
+        file_name = 'wmfile'
+        yes_name = False
+        while yes_name is False:
+            try:
+                file_name = input('\n Enter your file name with 5 or more caracters:  ')
+                if file_name.isalpha() and file_name.__len__() >= 5:
+                    yes_name = True
+                else:
+                    print('\n You entered --> {}'.format(file_name))
+                    print('\n WARNING: INVALID NAME!!!')
+                    print('\n You entered a STRING under 5 CARACTERS or an number')
+            except Exception as error:
+                print('\n You entered a STRING under 5 CARACTERS')
+                print('\n WARNING: INVALID NAME!!!')
+                print('\n PYTHON SAID: {}'.format(error))
+        complete_file = file_name + '.txt'
+        # complete_file = file_name + '.' + 'txt'
+        return  complete_file
+
+
+    def change_dir(self, code):
+        if code is 'root':
+            os.chdir('ESTRUTURAS_DADOS')
+        elif code is 1:     # go to root dir
+            current_dir_path = os.path.dirname(os.path.abspath(__file__))
+            os.chdir(current_dir_path)
+            print(os.getcwd())
+        elif code is 2:   # go to files_folder dir
+            # self.change_dir('root')
+            os.chdir('files_folder')
+            print(os.getcwd())
+        else:
+            pass
+
+    def prepare2read(self):
+        dso = ds.EstruturasDados()
+        # self.change_dir(2)
+        for file in glob.glob('*.txt'):
+            dso.arq.append(file)
+
+        # self.change_dir(1)
+
+
+    def oper_or_new_file(self):
+        option = None
+        yes_name = False
+        while yes_name is False:
+            print('\n\n  MENU ACTION \n'
+                  '\n operar -> Operar sobre um arquivo existe'
+                  '\n novo -> Criar um novo arquivo'
+                  '\n quit -> Abandonar')
+            try:
+                option = input('\n Enter your choice:  ')
+                actions = ['operar', 'novo', 'quit']
+                if option in actions:
+                    yes_name = True
+                elif option.isnumeric():
+                    raise Exception
+                else:
+                    print('\n You entered --> {}'.format(option))
+                    print('\n WARNING: INVALID OPTION!!!')
+                    print('\n You entered a STRING do not listed on MENU ACTION or a number')
+            except Exception as error:
+                print('\n WARNING: INVALID OPTION!!!')
+                print('\n You entered a NUMBER/NUMERIC')
+                print('\n PYTHON SAID: {}'.format(error))
+        return option
+
+    def file2oper(self):
+        dso = ds.EstruturasDados()
+        len = dso.arq.__len__()
+        # real_len = len - 1
+        print('\n ARQUIVOS DISPONÍVEIS PRA OPERAR \n')
+
+        # file = None
+        yes_file = False
+        while yes_file is False:
+            for ind in range(len):
+                p = ind + 1
+                print('\n [{}] -> {}'.format(p, dso.arq[ind]))
+            quit = 'quit'
+            zero = 0
+            print('\n [{}] -> {}'.format(zero, quit))
+            try:
+                option =  int(input('\n Enter your option:  '))
+                if option in range(1, len + 1):
+                    file = dso.arq[option-1]
+                    yes_file = True
+                elif option is 0:
+                    file = 'quit'
+                    yes_file = True
+                else:
+                    print('\n You entered --> {}'.format(option))
+                    print('\n WARNING: INVALID OPTION!!!')
+                    print('\n You entered a NUMBER do not listed on MENU ABOUVE\n')
+            except Exception as error:
+                print('\n WARNING: INVALID OPTION!!!')
+                print('\n You entered a STRING/CARACTER')
+                print('\n PYTHON SAID: {}'.format(error))
+        return file
+
+
+
+    def feedback(self):
+        print('\n\n -------------------------------------------')
+        print('\n\t    OPERATION DONE SUCCESSFULLY')
+        print('\n -------------------------------------------')

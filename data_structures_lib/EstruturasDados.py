@@ -2,8 +2,9 @@
 #           importing modules
 # ----------------------------------------
 
-import HelperModule as hm
-import Crud_operation as cm
+from data_structures_lib import Crud_operation as cm
+from data_structures_lib import HelperModule as hm
+import os, time as t
 
 # --------------------------------------------
 # class contain CRUD METHODS and
@@ -14,13 +15,13 @@ class EstruturasDados(object):
 
     lista = []
     dicio = {}
-    arq = 0
+    arq = []     # file holder - store all name of files exists in files_folder
     conj = set()
 
     def __init__(self):
         pass
 
-    
+
     # ------------- DATA STRUCTURES METHODS --------------
     # ESTRUTURA DE DADO  LISTA. CÓDIGO 1
     def metodoLitas(self, hmo):
@@ -108,23 +109,65 @@ class EstruturasDados(object):
 
     # ESTRUTURA DE DADO ARQUIVO. CÓDIGO  3
     def metodoArquivo(self, hmo):
+        print('CURRENT DIR: {}'.format(os.getcwd()))
         cmo = cm.Crud_operation()
-        run = 1
-        while run is 1:
+        hmo.change_dir(2)
+        hmo.prepare2read()
+        # hmo.change_dir(2)
+        run = True
+        while run is True:
             operacao = hmo.menu_atividade()
             if operacao == 1:     # create a file
                 resp = hmo.verif_estrut_exist(3)  # return 1 or 0
                 if resp == 1:     # file exist
-                    print('\n\n AVISO: Arquivo já existe!\n')
+                    info="""
+                     ***************************************
+                        FEEDBACK: Arquivo(s) existente(s)
+                     ***************************************
+                        Foram encontrados os seguintes
+                        arquivos:
+                     
+                     """
+                    print('{}'.format(info))
+
+                    for f in self.arq:
+                        print('\n File --> {}'.format(f))
+
+                    ans = hmo.oper_or_new_file()
+
+                    if ans == 'operar':
+                        pass
+                    elif ans == 'novo':
+                        cmo.create(3, 0, hmo)
+                    elif ans == 'quit':
+                        run = True # go back to menu of activities
+                    else:
+                        pass
                 else:
                     print('\n\n AVISO: Arquivo NÃO existe!\n Deve ser criado.')
                     cmo.create(3, 0, hmo) # create a file
             elif operacao == 2:   # read the file
                 resp = hmo.verif_estrut_exist(3)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:     # file exist
-                    cmo.read(3, hmo)
+                    file = hmo.file2oper()
+                    if file != 'quit':
+                        cmo.read(3, hmo, file)
+                    elif file =='quit':
+                        run = True
+                    else:
+                        pass
                 else:
-                    print('\n\n AVISO: Arquivo NÃO existe!\n Deve ser criado.')
+                    warning = """
+                    ************************************
+                        WARNING: NOTAS NAO REGISTRADA
+                    ************************************
+                       Nenhuma nota foi encontrada.
+                       Crie um nova pra operar. 
+                       No menu a seguir escolhe opcao
+                        --> CREATE
+                    """
+                    t.sleep(4)
+                    print('{}'.format(warning))
                     pass
                     # obj.create(3) # create a file
             elif operacao == 3:   # update a file
@@ -146,6 +189,7 @@ class EstruturasDados(object):
             else:
                 print('\n\n O(a) Sr(a) escolheu VOLTAR\n\n')
                 run = 0
+        hmo.change_dir(1)
         return
 
 

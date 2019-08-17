@@ -1,6 +1,6 @@
-import EstruturasDados as ds
-import HelperModule as hm
-import time as t
+from data_structures_lib import EstruturasDados as ds
+from data_structures_lib import HelperModule as hm
+import time as t, os
 
 
 # ----------------------------------
@@ -13,6 +13,10 @@ def main_app(run):
     hmo.app_info()
 
     while run is True:
+        current_dir_path = os.path.dirname(os.path.abspath(__file__))
+
+        print('CURRENT DIR: {}'.format(current_dir_path))
+        print('CURRENT DIR getcwd: {}'.format(os.getcwd()))
         opcao = hmo.menu()
         if opcao == 1:
             hmo.info_structure('lista')
