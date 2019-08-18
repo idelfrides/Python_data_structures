@@ -13,10 +13,10 @@ def main_app(run):
     hmo.app_info()
 
     while run is True:
-        current_dir_path = os.path.dirname(os.path.abspath(__file__))
+        # current_dir_path = os.path.dirname(os.path.abspath(__file__))
 
-        print('CURRENT DIR: {}'.format(current_dir_path))
-        print('CURRENT DIR getcwd: {}'.format(os.getcwd()))
+        # print('CURRENT DIR: {}'.format(current_dir_path))
+        # print('CURRENT DIR getcwd: {}'.format(os.getcwd()))
         opcao = hmo.menu()
         if opcao == 1:
             hmo.info_structure('lista')
@@ -38,8 +38,7 @@ def main_app(run):
 
 
 # ------------------------------------
-# THE METHOD THAT START RUNNING
-# THE APPLICATIONS
-# -----------------------------------
+# START RUNNING THE APPLICATIONS
+# ------------------------------------
 if __name__ == "__main__":
     main_app(True)  

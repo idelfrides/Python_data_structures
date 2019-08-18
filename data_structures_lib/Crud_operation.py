@@ -1,7 +1,14 @@
-import os
-
+#-------------------------------------
+# importing my own modules
+# ------------------------------------
 from data_structures_lib import EstruturasDados as ds
+
+#-------------------------------------
+# importing python modules
+# ------------------------------------
+import glob, os
 import time as t
+
 
 class Crud_operation(object):
 
@@ -31,9 +38,9 @@ class Crud_operation(object):
             return
         elif tipo_estru == 3:   # create a file
             file_name = hmo.get_file_name()
-            print('CURRENT DIR: {}'.format(os.getcwd()))
+            # print('CURRENT DIR: {}'.format(os.getcwd()))
 
-            # hmo.change_dir(2)    # go to files_folder directory
+            content = list()
             try:
                 arquivo = open(file_name, 'w', encoding="utf-8")
 
@@ -41,18 +48,20 @@ class Crud_operation(object):
                 t.sleep(4)
                 preench = True
                 hour = t.asctime()
-                ind = 0
+                ind = 1
                 while preench is True:
                     # ind = ind + 1
                     print('\n Informe um dado pra linha [%d] ou ( N ou n ) pra sair:  '%(ind))
                     dado = input('\n Informe um dado:  ')
                     if dado is not 'N' and dado is not 'n':
                        data = dado + '\n'
-                       arquivo.writelines(data)
+                       content.append(data)
                        ind = ind + 1
                     else:
+                        arquivo.writelines(content)
                         preench = False
                         arquivo.write(hour)
+                        arquivo.write('\n')
                         arquivo.close()
                         hmo.feedback()
                         # hmo.change_dir(1) # go to root dir
@@ -72,7 +81,7 @@ class Crud_operation(object):
             return
 
 
-    def read(self, tipo_estru, hmo, file_name):
+    def read(self, tipo_estru, file_name):
         dso = ds.EstruturasDados()
         if tipo_estru == 1:   # read the list
             my_lista = dso.lista
@@ -91,10 +100,7 @@ class Crud_operation(object):
             arquivo = open(file_name, 'r', encoding="utf-8")
             # dados_arq = arquivo.readlines()
             for d in arquivo:
-                # v = d.split()
                 print(d)
-                # print('\n')
-            # hmo.my_set(1, 3)
             arquivo.close()
             print('\n\n')
             return
@@ -108,7 +114,7 @@ class Crud_operation(object):
             pass
 
 
-    def update(self, tipo_estru, hmo):
+    def update(self, tipo_estru, hmo, file_name, up_type):
         dso = ds.EstruturasDados()
 
         if tipo_estru == 1:   # read a list
@@ -146,52 +152,78 @@ class Crud_operation(object):
         elif tipo_estru == 2:  # create a dictionary
             my_dicio = dso.dicio
             print('\n\n ATUALIZACAO \n')
-            op = int(input(' 1 -> Atualizar dicionario interio \n 2 -> Apenas um elemento \n\n  Sua opcao aqui:   '))
+
+            # op = int(input(' 1 -> Atualizar dicionario interio \n 2 -> Apenas um elemento \n\n  Sua opcao aqui:   '))
+            options = ['Atualizar dicionario interio','Apenas um elemento']
+            op = hmo.generate_menu(options)
             print('\r')
-            if op is 1:
+            if op is 1:   # Atualizar dicionario interio
                 aux = True
                 tam = my_dicio.__len__()
                 k = 1
                 while aux is  True:
-                    valor = int(input('\n Informe um valor p/ [%d] ou 0 pra sair:  ' % (k)))
-                    if type(valor) is int and valor != 0 and k <= tam:
+                    valor = input('\n Informe um valor p/ [%d] ou "quit" pra sair:  ' % (k))
+                    if  valor.isalpha() and  valor != 'quit' and k <= tam:
                         my_dicio.pop(k)
                         my_dicio.setdefault(k, valor)
                         k = k + 1
                         print(my_dicio)
-                    elif type(valor) is int and valor != 0 and k > tam:
+                    elif valor.isnumeric() and valor != 0 and k <= tam:
+                        my_dicio.pop(k)
+                        my_dicio.setdefault(k, int(valor))
+                        k = k + 1
+                    elif valor.isnumeric() and valor != 0 and k > tam:
+                        real_value = int(valor)
+                        my_dicio.setdefault(k, real_value)
+                        k = k + 1
+                        print(my_dicio)
+                    elif valor.isalpha() and valor != 'quit' and k > tam:
                         my_dicio.setdefault(k, valor)
                         k = k + 1
                         print(my_dicio)
-                    else:
+                    elif valor == 'quit':
                         hmo.my_set(my_dicio, 1)
                         return
-            elif op is 2:
+                    else:
+                        pass
+
+            elif op is 2: # Apenas um elemento
                 k = int(input('\n Informe a posicao do elemento:  '))
-                v = int(input('\n Informe o novo valor:  '))
-                my_dicio.pop(k)
-                my_dicio.setdefault(k, v)
-                print(my_dicio)
-                print('\n\n\n')
-                hmo.my_set(my_dicio, 1)
-                return
-        elif tipo_estru == 3:  # create a file
-            print('\n\n ATUALIZACAO DE ARQUIVO \n')
-            arquivo = open('arquivo.txt', 'w', encoding="utf-8")
-            preench = True
-            ind = 0
-            while preench is True:
-                ind = ind + 1
-                dado = input('Informe um dado pra linha [%d] ou N pra sair:  ' % (ind))
-                if dado is not 'N' and dado is not 'n':
-                    # arquivo.writelines(dado)
-                    arquivo.writelines(dado)
-                    # d.append(dado)
+                v = input('\n Informe o novo valor/dado:  ')
+                if k <= 0 or k > my_dicio.__len__():
+                    print('\n\n WARNING: INVALID POSITION \n THIS ACTION WILL BE QUITED \n\n')
+                    t.sleep(4)
+                    return
+                elif v.isnumeric():
+                    my_dicio.pop(k)
+                    my_dicio.setdefault(k, float(v))
+
+                    print(my_dicio)
+                    print('\n\n\n')
+                    hmo.my_set(my_dicio, 1)
+                    return
+                elif v.isalpha():
+                    my_dicio.pop(k)
+                    my_dicio.setdefault(k, v)
+
+                    print(my_dicio)
+                    print('\n\n\n')
+                    hmo.my_set(my_dicio, 1)
+                    return
                 else:
-                    preench = False
-                    hmo.my_set(1, 3)
-                    arquivo.close()
-            return
+                    print('\n\n WARNING: INVALID VALUE \n THIS ACTION WILL BE QUITED \n\n')
+                    t.sleep(4)
+                    return
+        elif tipo_estru == 3:  # update a file
+            print('\n\n ATUALIZACAO DE ARQUIVO --> {}\n'.format(file_name))
+            if up_type == 'add':
+                self.update_add(hmo, file_name)
+                return
+            elif up_type == 'replace':
+                self.update_replace(hmo, file_name)
+                return
+            else:
+                pass
         elif tipo_estru == 4:  # create a set
             print('\n\n ATUALIZACAO DO CONJUNTO \n')
             my_conj = dso.conj
@@ -212,9 +244,6 @@ class Crud_operation(object):
                         my_conj.add(valor)
                         k = k + 1
                         print(my_conj)
-                        # self.create(4, 1)
-                        # aux = False
-                        # self.my_set(my_conj, 4)
                     else:
                         hmo.my_set(my_conj, 4)
                         aux = False
@@ -232,7 +261,7 @@ class Crud_operation(object):
             pass
 
 
-    def delete(self, tipo_estru, hmo):
+    def delete(self, tipo_estru, hmo, file_name):
         dso = ds.EstruturasDados()
         if tipo_estru == 1:  # read a list
             my_lista = dso.lista
@@ -249,9 +278,11 @@ class Crud_operation(object):
             hmo.my_set(my_dicio, 1)
             return
         elif tipo_estru == 3:  # delete content in thefile
-            print('\n\n DELETE: CONTEÚDO DE ARQUIVO \n')
-            arquivo = open('arquivo.txt', 'w')
-            arquivo.close()
+            print('\n\n DELETANDO O ARQUIVO -> {} \n'.format(file_name))
+            all_files = glob.glob('*.txt')
+            if file_name in all_files:
+                os.unlink(file_name)
+            hmo.feedback()
             return
         elif tipo_estru == 4:  # create a set
             print('\n\n DELETE CONJUNTO \n')
@@ -264,5 +295,69 @@ class Crud_operation(object):
             pass
 
 
+    def update_add(self, hmo, file_name):
+        old_content = list()
+        try:
+            # arq = open(file_name, 'r', encoding="utf-8")
+            # t.sleep(4)
+            # for d in arq:
+            # old_content.append(d)
+            # arq.close()
+            # t.sleep(3)
 
-    
+            arquivo = open(file_name, 'a', encoding='utf-8')
+
+            # arquivo.writelines(old_content)
+            preench = True
+            hour = t.asctime()
+            ind = 0
+            while preench is True:
+                print('\n Informe um dado pra linha [%d] ou ( N ou n ) pra sair:  ' % (ind))
+                dado = input('\n Informe um dado:  ')
+                if dado is not 'N' and dado is not 'n':
+                    data = dado + '\n'
+                    old_content.append(data)
+                    # arquivo.writelines(data)
+                    ind = ind + 1
+                else:
+                    arquivo.writelines(old_content)
+                    preench = False
+                    arquivo.write(hour)
+                    arquivo.write('\n')
+                    arquivo.close()
+                    hmo.feedback()
+        except Exception as error:
+            print('\n ERROR: ocorred when try to open file --> {}'.format(file_name))
+            print('\n PYTHON SAYD: {}'.format(error))
+
+
+    def update_replace(self, hmo, file_name):
+        content = list()
+        try:
+            arq = open(file_name, 'w', encoding="utf-8")
+            """ this clear the current 
+            content inside the file"""
+            # arq.close()
+
+            # t.sleep(4)
+            preench = True
+            hour = t.asctime()
+            ind = 0
+            print('\n NOVOS DADOS PRA O SEU ARQUIVO {}\n\n'.format(file_name))
+            while preench is True:
+                print('\n Informe um dado pra linha [%d] ou ( N ou n ) pra sair:  ' % (ind))
+                dado = input('\n Informe um dado:  ')
+                if dado is not 'N' and dado is not 'n':
+                    data = dado + '\n'
+                    content.append(data)
+                    ind = ind + 1
+                else:
+                    arq.writelines(content)
+                    preench = False
+                    arq.write(hour)
+                    arq.write('\n')
+                    arq.close()
+                    hmo.feedback()
+        except Exception as error:
+            print('\n ERROR: ocorred when try open a file --> {}.'.format(file_name))
+            print('\n PYTHON SAYD: {}'.format(error))

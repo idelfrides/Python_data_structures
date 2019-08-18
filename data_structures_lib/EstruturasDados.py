@@ -39,7 +39,7 @@ class EstruturasDados(object):
             elif operacao == 2:
                 resp = hmo.verif_estrut_exist(1)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:  # list exist
-                    cmo.read(1, hmo)
+                    cmo.read(1, 'notused')
                 else:
                     print('\n\n AVISO: Lista NÃO existe!\n Deve ser criada. \n')
                     pass
@@ -47,7 +47,7 @@ class EstruturasDados(object):
             elif operacao == 3:
                 resp = hmo.verif_estrut_exist(1)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:  # list exist
-                    cmo.update(1, hmo)
+                    cmo.update(1, hmo, 'notused', 'notused')
                 else:
                     print('\n\n AVISO: Lista NÃO existe!\n Deve ser criada. \n')
                     pass
@@ -55,7 +55,7 @@ class EstruturasDados(object):
             elif operacao == 4:
                 resp = hmo.verif_estrut_exist(1)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:  # list exist
-                    cmo.delete(1, hmo)
+                    cmo.delete(1, hmo, 'notused')
                 else:
                     print('\n\n AVISO: Lista NÃO existe!\n Deve ser criada. \n')
                     pass
@@ -81,7 +81,7 @@ class EstruturasDados(object):
             elif operacao == 2:    # read the dict
                 resp = hmo.verif_estrut_exist(2)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:      # dict exist
-                    cmo.read(2, hmo)    # read the dict
+                    cmo.read(2, 'notused')    # read the dict
                 else:
                     print('\n\n AVISO: Dicionario NÃO existe!\n Deve ser criado. \n')
                     pass
@@ -89,7 +89,7 @@ class EstruturasDados(object):
             elif operacao == 3:    # update a dict
                 resp = hmo.verif_estrut_exist(2)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:      # dict exist
-                    cmo.update(2, hmo)  # update dict
+                    cmo.update(2, hmo, 'notused','notused')  # update dict
                 else:
                     print('\n\n AVISO: Dicionario NÃO existe!\n Deve ser criado. \n')
                     pass
@@ -97,7 +97,7 @@ class EstruturasDados(object):
             elif operacao == 4:    # delete the dict
                 resp = hmo.verif_estrut_exist(2)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:      # dict exist
-                    cmo.delete(2, hmo)  # delete the dict
+                    cmo.delete(2, hmo, 'obama')  # delete the dict
                 else:
                     print('\n\n AVISO: Dicionario NÃO existe!\n Deve ser criado. \n')
                     pass
@@ -109,7 +109,7 @@ class EstruturasDados(object):
 
     # ESTRUTURA DE DADO ARQUIVO. CÓDIGO  3
     def metodoArquivo(self, hmo):
-        print('CURRENT DIR: {}'.format(os.getcwd()))
+        # print('CURRENT DIR: {}'.format(os.getcwd()))
         cmo = cm.Crud_operation()
         hmo.change_dir(2)
         hmo.prepare2read()
@@ -151,7 +151,7 @@ class EstruturasDados(object):
                 if resp == 1:     # file exist
                     file = hmo.file2oper()
                     if file != 'quit':
-                        cmo.read(3, hmo, file)
+                        cmo.read(3, file)
                     elif file =='quit':
                         run = True
                     else:
@@ -173,15 +173,29 @@ class EstruturasDados(object):
             elif operacao == 3:   # update a file
                 resp = hmo.verif_estrut_exist(3)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:     # file exist
-                    cmo.update(3, hmo)
+                    file = hmo.file2oper()
+                    up_type = hmo.update_type()
+                    if file != 'quit':
+                        cmo.update(3, hmo, file, up_type)
+                    elif file == 'quit' or up_type == 'quit':
+                        run = True
+                    else:
+                        pass
+
                 else:
                     print('\n\n AVISO: Arquivo NÃO existe!\n Deve ser criado.')
                     pass
                     # obj.create(3) # create a file
             elif operacao == 4:   # delete the file
                 resp = hmo.verif_estrut_exist(3)  # argument is number of data strucuture. return 1 or 0
-                if resp is 1:     # file exist
-                    cmo.delete(3, hmo)
+                if resp is 1:     # file
+                    file = hmo.file2oper()
+                    if file != 'quit':
+                        cmo.delete(3, hmo, file)
+                    elif file == 'quit':
+                        run = True
+                    else:
+                        pass
                 else:
                     print('\n\n AVISO: Arquivo NÃO existe!\n Deve ser criado.')
                     pass
@@ -209,7 +223,7 @@ class EstruturasDados(object):
             elif operacao == 2:
                 resp = hmo.verif_estrut_exist(4)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:  # list exist
-                    cmo.read(4, hmo)
+                    cmo.read(4, 'file')
                 else:
                     print('\n\n AVISO: Conjunto NÃO existe!\n Deve ser criado.\n')
                     pass
@@ -217,7 +231,7 @@ class EstruturasDados(object):
             elif operacao == 3:
                 resp = hmo.verif_estrut_exist(4)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:  # list exist
-                    cmo.update(4, hmo)
+                    cmo.update(4, hmo, 'notused', 'notused')
                 else:
                     print('\n\n AVISO: Conjunto NÃO existe!\n Deve ser criado.\n')
                     pass
@@ -225,7 +239,7 @@ class EstruturasDados(object):
             elif operacao == 4:
                 resp = hmo.verif_estrut_exist(4)  # argument is number of data strucuture. return 1 or 0
                 if resp == 1:  # list exist
-                    cmo.delete(4, hmo)
+                    cmo.delete(4, hmo, 'notused')
                 else:
                     print('\n\n AVISO: Conjunto NÃO existe!\n Deve ser criado.\n')
                     pass

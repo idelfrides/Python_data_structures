@@ -1,8 +1,8 @@
 # ----------------------------------------
 #           importing modules
 # ----------------------------------------
-import glob
-import os
+import glob, os
+import time as t
 
 from data_structures_lib import EstruturasDados as ds
 
@@ -34,8 +34,7 @@ class HelperModule(object):
                 - FILE
                 - SET     
                 
-        *********************************************  
-        
+        ********************************************  
         ''')
 
     def menu(self):
@@ -62,12 +61,12 @@ class HelperModule(object):
               '\n 2 - READ '
               '\n 3 - UPDATE '
               '\n 4 - DELETE  '
-              '\n 0 - Voltar\n\n')
+              '\n 0 - Voltar\n')
         yes_act = False
         option = None
         while yes_act is False:
             try:
-                option = int(input('\n\n Enter an action to perform:  '))
+                option = int(input('\n Enter an action to perform:  '))
                 if option in range(5):
                     yes_act = True
                 else:
@@ -194,7 +193,7 @@ class HelperModule(object):
             help_value = input('\n Enter some: ')
 
             if help_value.isnumeric():
-                ind = + 1
+                ind = ind + 1
                 valor = int(help_value)
                 dicio[(ind)] = valor
                 print(dicio)
@@ -272,7 +271,7 @@ class HelperModule(object):
         elif code is 2:   # go to files_folder dir
             # self.change_dir('root')
             os.chdir('files_folder')
-            print(os.getcwd())
+            # print(os.getcwd())
         else:
             pass
 
@@ -283,7 +282,6 @@ class HelperModule(object):
             dso.arq.append(file)
 
         # self.change_dir(1)
-
 
     def oper_or_new_file(self):
         option = None
@@ -343,9 +341,138 @@ class HelperModule(object):
                 print('\n PYTHON SAID: {}'.format(error))
         return file
 
-
-
     def feedback(self):
         print('\n\n -------------------------------------------')
         print('\n\t    OPERATION DONE SUCCESSFULLY')
         print('\n -------------------------------------------')
+
+    def update_type(self):
+        option = None
+        yes_type = False
+        while yes_type is False:
+            print('\n\n  MENU TYPE UPDATE \n'
+                '\n add -> UPDATE ADD: Adicionar novo conteúdo ao já existente no arquivo'
+                '\n replace -> UPDATE REPLACE: Substituir o conteúdo existente'
+                '\n quit -> Abandonar')
+            try:
+                option = input('\n Enter your choice:  ')
+                myoptions = ['add', 'replace', 'quit']
+                if option in myoptions:
+                    yes_type = True
+                elif option.isnumeric():
+                    raise Exception
+                else:
+                    print('\n You entered --> {}'.format(option))
+                    print('\n WARNING: INVALID OPTION!!!')
+                    print('\n You entered a STRING do not listed on MENU TYPE UPDATE or a number')
+            except Exception as error:
+                print('\n WARNING: INVALID OPTION!!!')
+                print('\n You entered a NUMBER/NUMERIC')
+                print('\n PYTHON SAID: {}'.format(error))
+        return option
+
+    def generate_menu(self, options):
+        """
+             parameters definition
+        -------------------------------------
+        :param options - a list of options
+            ex.: options['create', 'read', 'update',  'delete']
+
+        """
+        print('\n I AM GENERATEMENU \n\n')
+        n = options.__len__()
+
+        print('\n MENU DE OPTIONS \n')
+        for ind in range(n):
+            choice = ind + 1
+            op = options[ind].upper()
+            print('\n {} --> {}'.format(choice, op))
+
+        choice = 'quit'
+        op = 'Sair'
+        print('\n {} --> {}'.format(choice, op))
+
+        yes_act = False
+        option = None
+        while yes_act is False:
+            try:
+                option = int(input('\n\n Enter an option to perform:  '))
+                if option in range(1, n + 1):
+                    yes_act = True  # option is valid
+                elif option == 'quit':
+                    yes_act = True
+                else:
+                    print('\n You entered --> {} '.format(option))
+                    print('\n WARNING: INVALID OPTION!!\n\n')
+            except Exception as error:
+                print('\n You entered a CARACTER or a STRING')
+                print('\n WARNING: INVALID OPTION!!!')
+                print('\n PYTHON SAID: {}'.format(error))
+        return option
+
+    def getting_values(self, struct, type_struct, type_data):
+        """
+             parameters definition
+        -------------------------------------
+        :param type_data - define the type of data user expected.
+            It can be 'numeric', 'alpha' or 'both'
+        """
+        if type_data == 'numeric':
+            struct = self.get_numeric_values(struct, type_struct)
+        elif type_data == 'alpha':
+            pass
+            # struct = self.get_alpha_values(struct, type_struct)
+        elif type_data == 'both':
+            pass
+            # struct = self.get_all_values(struct, type_struct)
+        else:
+            print('\n\n INVALID TYPE OF DATA \n This task will not performed \n\n')
+            t.sleep(4)
+        return struct
+
+    def get_numeric_values(self, struct, type_struct):
+
+        if type_struct == 'list':
+            info = """
+            ***************************************
+                FILL YOUR DATA STRUCTURE 
+                WITH NUMERIC VALUES
+            ****************************************
+            """
+            print('{} --> {}'.format(info, struct))
+
+            yes_act = False
+            option = None
+            n = struct.__len__()
+            ind = n
+            while yes_act is False:
+                try:
+                    ind = ind + 1
+                    print('\n\n Enter a value to position [%d] of your LIST' %(ind))
+                    print('\n quit --> Sair')
+                    value = input('\n\n Enter a value:  ')
+                    if value.isnumeric():
+                        struct.append(float(value))
+
+                    elif value.isalpha() and value == 'quit':
+                        yes_act = True    # quit
+                    else:  # invalid value
+                        print('\n You entered --> {} '.format(option))
+                        raise Exception
+                        #print('\n WARNING: INVALID OPTION!!\n\n')
+                except Exception as error:
+                    print('\n You entered a CARACTER or a STRING')
+                    print('\n WARNING: INVALID VALUE!!!')
+                    print('\n PYTHON SAID: {}'.format(error))
+        elif type_struct == 'set':
+            pass
+        else:
+            pass
+
+        return struct
+
+    def get_alpha_values(self):
+        pass
+
+    def get_all_values(self):
+        pass
