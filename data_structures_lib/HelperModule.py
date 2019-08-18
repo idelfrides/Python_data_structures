@@ -263,11 +263,13 @@ class HelperModule(object):
 
     def change_dir(self, code):
         if code is 'root':
-            os.chdir('ESTRUTURAS_DADOS')
+            dir_root = os.path.dirname(os.path.abspath(__file__))
+            os.chdir(dir_root)
+            #os.chdir('ESTRUTURAS_DADOS')
         elif code is 1:     # go to root dir
             current_dir_path = os.path.dirname(os.path.abspath(__file__))
             os.chdir(current_dir_path)
-            print(os.getcwd())
+            # print(os.getcwd())
         elif code is 2:   # go to files_folder dir
             # self.change_dir('root')
             os.chdir('files_folder')

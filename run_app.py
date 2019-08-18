@@ -13,9 +13,9 @@ def main_app(run):
     hmo.app_info()
 
     while run is True:
-        # current_dir_path = os.path.dirname(os.path.abspath(__file__))
-
-        # print('CURRENT DIR: {}'.format(current_dir_path))
+        root_dir_path = os.path.dirname(os.path.abspath(__file__))
+        # os.chdir(root_dir_path)
+        print('CURRENT DIR: {}'.format(root_dir_path))
         # print('CURRENT DIR getcwd: {}'.format(os.getcwd()))
         opcao = hmo.menu()
         if opcao == 1:
@@ -26,13 +26,22 @@ def main_app(run):
             dso.metodoDicionario(hmo)
         elif opcao is 3:
             hmo.info_structure('arquivo')
-            dso.metodoArquivo(hmo)
+            dso.metodoArquivo(hmo, root_dir_path)
+            dso.arq.clear()  # clear the controll list of files created
         elif opcao == 4:
             hmo.info_structure('conjunto')
             dso.metodoConjuntos(hmo)
         else:
-            print('\n O(a) Sr(a), escolheu SAIR. \n A aplicacao sera encerrada. \n\n Grande abraço e Good bye. \n\n\n')
-            t.sleep(7)
+            bye = """
+            ------------------------------------
+                O(a) Sr(a), escolheu SAIR. 
+                A aplicacao sera encerrada.\n
+                Grande abraço e Good bye.
+            ------------------------------------ 
+            """
+            print('\n {}'.format(bye))
+            print('\n\n\n')
+            t.sleep(5)
             run = False
     return
 

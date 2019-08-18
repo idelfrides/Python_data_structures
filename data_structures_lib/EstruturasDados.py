@@ -108,10 +108,10 @@ class EstruturasDados(object):
         return
 
     # ESTRUTURA DE DADO ARQUIVO. CÓDIGO  3
-    def metodoArquivo(self, hmo):
+    def metodoArquivo(self, hmo, path):
         # print('CURRENT DIR: {}'.format(os.getcwd()))
         cmo = cm.Crud_operation()
-        hmo.change_dir(2)
+        hmo.change_dir(2)  # go to files_folder dir
         hmo.prepare2read()
         # hmo.change_dir(2)
         run = True
@@ -203,7 +203,14 @@ class EstruturasDados(object):
             else:
                 print('\n\n O(a) Sr(a) escolheu VOLTAR\n\n')
                 run = 0
-        hmo.change_dir(1)
+        """ go to data_structures_lib dir """
+        # hmo.change_dir(1)
+        """ go to project root dir
+         --> ESTRUTURAS_DADOS """
+        os.chdir(path)
+        # hmo.change_dir('root')
+        print(os.getcwd())
+
         return
 
 
