@@ -16,7 +16,6 @@ def main_app(run):
         root_dir_path = os.path.dirname(os.path.abspath(__file__))
         # os.chdir(root_dir_path)
         print('CURRENT DIR: {}'.format(root_dir_path))
-        # print('CURRENT DIR getcwd: {}'.format(os.getcwd()))
         opcao = hmo.menu()
         if opcao == 1:
             hmo.info_structure('lista')

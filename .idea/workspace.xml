@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca93c348-66d5-4447-b400-46fa5ed31a56" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/data_structures_lib/EstruturasDados.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures_lib/EstruturasDados.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures_lib/HelperModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures_lib/HelperModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_folder/brasil.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_folder/teste.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files_folder/teste.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,8 +60,8 @@
           <file leaf-file-name="run_app.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/run_app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+                <state relative-caret-position="202">
+                  <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
                   <folding>
                     <element signature="e#0#53#0" expanded="true" />
                   </folding>
@@ -568,16 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_structures_lib/HelperModule.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -595,6 +581,16 @@
             <element signature="e#11636#12725#0" />
             <element signature="e#14088#14701#0" />
             <element signature="e#14813#16264#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
